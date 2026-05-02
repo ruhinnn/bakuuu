@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şehrim: Bakü | Web Teknolojileri Projesi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MyWebProject</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="api.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-2" href="login.html">Giriş Yap</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container content-section">
+        
+        <div class="text-center mb-5">
+            <h1 class="display-4 text-primary fw-bold">Bakü</h1>
+            <p class="lead">Ateşler Ülkesinin Başkenti ve Kafkasların İncisi</p>
+        </div>
+
+        <!-- Carousel (Slider) -->
+        <div id="cityCarousel" class="carousel slide custom-card mb-5 shadow-lg" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="https://images.unsplash.com/photo-1582200236021-36f6d6ab20dd?q=80&w=1200&h=500&fit=crop" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1582200236021-36f6d6ab20dd?q=80&w=1200&h=500&fit=crop" class="d-block w-100" alt="Alev Kuleleri">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Alev Kuleleri (Flame Towers)</h5>
+                        <p>Bakü'nün modern sembollerinden olan görkemli yapılar.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://images.unsplash.com/photo-1580213123899-01201ebcd953?q=80&w=1200&h=500&fit=crop" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1580213123899-01201ebcd953?q=80&w=1200&h=500&fit=crop" class="d-block w-100" alt="Haydar Aliyev Merkezi">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Haydar Aliyev Merkezi</h5>
+                        <p>Zaha Hadid'in tasarladığı eşsiz mimari harika.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://images.unsplash.com/photo-1589309322305-648b7f879dc6?q=80&w=1200&h=500&fit=crop" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1589309322305-648b7f879dc6?q=80&w=1200&h=500&fit=crop" class="d-block w-100" alt="İçerişehir ve Kız Kulesi">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>İçerişehir</h5>
+                        <p>Bakü'nün tarihi ve kültürel kalbi olan eski şehir bölgesi.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://images.unsplash.com/photo-1628178875567-0efbf10bc28a?q=80&w=1200&h=500&fit=crop" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1628178875567-0efbf10bc28a?q=80&w=1200&h=500&fit=crop" class="d-block w-100" alt="Bakü Bulvarı">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Bakü Bulvarı (Milli Park)</h5>
+                        <p>Hazar Denizi kıyısında uzanan harika yürüyüş yolu.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#cityCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Önceki</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#cityCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Sonraki</span>
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="custom-card card p-4 h-100">
+                    <h3 class="text-primary border-bottom pb-2">Genel Bilgiler</h3>
+                    <p><strong>Nüfus:</strong> Yaklaşık 2.300.000</p>
+                    <p><strong>Bölge:</strong> Abşeron Yarımadası, Azerbaycan</p>
+                    <p>Bakü, Azerbaycan'ın başkenti ve en büyük şehridir. Hazar Denizi'nin batı kıyısında yer alan şehir, zengin tarihi dokusuyla modern mimarinin eşsiz birleşimini sunar. Şehir rüzgarlı havasıyla "Rüzgarlar Şehri" olarak da bilinmektedir.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="custom-card card p-4 h-100">
+                    <h3 class="text-primary border-bottom pb-2">Gezilecek Yerler</h3>
+                    <ul>
+                        <li><strong>Kız Kulesi (Qız Qalası):</strong> UNESCO Dünya Mirası Listesi'nde yer alan, Bakü'nün en eski sembollerinden biri.</li>
+                        <li><strong>Şirvanşahlar Sarayı:</strong> İçerişehir'de bulunan 15. yüzyıldan kalma muazzam saray kompleksi.</li>
+                        <li><strong>Alev Kuleleri:</strong> Şehrin her yerinden görülebilen, modern Bakü'nün sembolü 3 dev gökdelen.</li>
+                        <li><strong>Haydar Aliyev Merkezi:</strong> Modern mimarinin dünyadaki en önemli örneklerinden biri olan kültür merkezi.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Web Teknolojileri Projesi.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

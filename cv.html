@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özgeçmiş (CV) | Web Teknolojileri Projesi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Semantic Header for page -->
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">MyWebProject</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="cv.html">Özgeçmiş</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+                        <li class="nav-item"><a class="nav-link" href="api.html">İlgi Alanlarım</a></li>
+                        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-2" href="login.html">Giriş Yap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Semantic Main Content -->
+    <main class="container content-section">
+        <div class="row">
+            <!-- Main Content Area -->
+            <div class="col-lg-8">
+                <!-- Semantic Section for Education -->
+                <section class="mb-5 custom-card card p-4">
+                    <h2 class="border-bottom pb-2 mb-4"><i class="fas fa-graduation-cap text-primary me-2"></i>Eğitim Bilgileri</h2>
+                    
+                    <!-- Semantic Article for each education entry -->
+                    <article class="mb-4">
+                        <h4 class="text-primary">Lisans, Bilgisayar Mühendisliği</h4>
+                        <h5 class="text-secondary">Sakarya Üniversitesi | 2024 - Devam Ediyor</h5>
+                        <p>Web Teknolojileri, Programlama, Veri Yapıları gibi alanlarda eğitim alınmaktadır.</p>
+                    </article>
+
+                    <article>
+                        <h4 class="text-primary">Lise</h4>
+                        <h5 class="text-secondary">Bakü 7 No'lu Lise | Mezun</h5>
+                        <p>Matematik ve fen bilimleri ağırlıklı lise eğitimi.</p>
+                    </article>
+                </section>
+
+                <!-- Semantic Section for Skills -->
+                <section class="custom-card card p-4">
+                    <h2 class="border-bottom pb-2 mb-4"><i class="fas fa-laptop-code text-primary me-2"></i>Teknik Yetenekler</h2>
+                    <article>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>Programlama Dilleri:</strong> Java, Python, JavaScript, PHP</li>
+                            <li class="mb-2"><strong>Web Teknolojileri:</strong> HTML5, CSS3, Bootstrap, Vue.js</li>
+                            <li class="mb-2"><strong>Veritabanı:</strong> MySQL, PostgreSQL</li>
+                            <li><strong>Araçlar:</strong> Git, GitHub, VS Code, Figma</li>
+                        </ul>
+                    </article>
+                </section>
+            </div>
+
+            <!-- Semantic Aside for sidebar info -->
+            <aside class="col-lg-4 mt-4 mt-lg-0">
+                <div class="custom-card card p-4 sticky-lg-top" style="top: 100px;">
+                    <h3 class="mb-3">İletişim Bilgileri</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-envelope text-primary me-2"></i> b241210559@sakarya.edu.tr</li>
+                        <li class="mb-3"><i class="fas fa-phone text-primary me-2"></i> +90 555 123 45 67</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> Sakarya, Türkiye</li>
+                        <li class="mb-3"><i class="fab fa-linkedin text-primary me-2"></i> linkedin.com/in/ruhinsafarov</li>
+                        <li><i class="fab fa-github text-primary me-2"></i> github.com/ruhinsafarov</li>
+                    </ul>
+                    <a href="iletisim.html" class="btn btn-primary-custom w-100 mt-3">Bana Ulaşın</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Web Teknolojileri Projesi. HTML5 Semantik Etiketleri ile oluşturulmuştur.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
