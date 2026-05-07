@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim | Web Teknolojileri Projesi</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome for icons -->
+    <!-- FontAwesome for icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Vue 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -30,7 +32,8 @@
                     <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
                     <li class="nav-item"><a class="nav-link" href="api.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-2" href="login.html">Giriş Yap</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-2" href="login.html">Giriş
+                            Yap</a></li>
                 </ul>
             </div>
         </div>
@@ -42,10 +45,10 @@
             <div class="col-md-8">
                 <div class="custom-card card p-4 shadow-lg">
                     <h2 class="text-center text-primary mb-4">Bize Ulaşın</h2>
-                    
+
                     <!-- Alert for JS validation errors -->
                     <div id="errorAlert" class="alert alert-danger" style="display:none;"></div>
-                    
+
                     <!-- Vue App Wrapper -->
                     <div id="vue-app">
                         <!-- Alert for Vue validation errors -->
@@ -56,34 +59,39 @@
                         </div>
 
                         <form id="contactForm" action="form-sonuc.php" method="POST" novalidate ref="formRef">
-                            
+
                             <!-- Ad Soyad (Text) -->
                             <div class="mb-3">
                                 <label for="adSoyad" class="form-label">Ad Soyad</label>
-                                <input type="text" class="form-control" id="adSoyad" name="adSoyad" v-model="formData.adSoyad">
+                                <input type="text" class="form-control" id="adSoyad" name="adSoyad"
+                                    v-model="formData.adSoyad">
                             </div>
 
                             <!-- E-mail -->
                             <div class="mb-3">
                                 <label for="email" class="form-label">E-mail Adresi</label>
-                                <input type="email" class="form-control" id="email" name="email" v-model="formData.email">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    v-model="formData.email">
                             </div>
 
                             <!-- Telefon (Numbers only) -->
                             <div class="mb-3">
                                 <label for="telefon" class="form-label">Telefon (Sadece Rakam)</label>
-                                <input type="text" class="form-control" id="telefon" name="telefon" v-model="formData.telefon">
+                                <input type="text" class="form-control" id="telefon" name="telefon"
+                                    v-model="formData.telefon">
                             </div>
 
                             <!-- Cinsiyet (Radio) -->
                             <div class="mb-3">
                                 <label class="form-label d-block">Cinsiyet</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="Erkek" v-model="formData.cinsiyet">
+                                    <input class="form-check-input" type="radio" name="cinsiyet" id="erkek"
+                                        value="Erkek" v-model="formData.cinsiyet">
                                     <label class="form-check-label" for="erkek">Erkek</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="cinsiyet" id="kadin" value="Kadın" v-model="formData.cinsiyet">
+                                    <input class="form-check-input" type="radio" name="cinsiyet" id="kadin"
+                                        value="Kadın" v-model="formData.cinsiyet">
                                     <label class="form-check-label" for="kadin">Kadın</label>
                                 </div>
                             </div>
@@ -104,15 +112,18 @@
                             <div class="mb-3">
                                 <label class="form-label d-block">İletişim Nedeni</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="konu[]" value="İş Teklifi" id="konu1" v-model="formData.konular">
+                                    <input class="form-check-input" type="checkbox" name="konu[]" value="İş Teklifi"
+                                        id="konu1" v-model="formData.konular">
                                     <label class="form-check-label" for="konu1">İş Teklifi</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="konu[]" value="Proje" id="konu2" v-model="formData.konular">
+                                    <input class="form-check-input" type="checkbox" name="konu[]" value="Proje"
+                                        id="konu2" v-model="formData.konular">
                                     <label class="form-check-label" for="konu2">Proje</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="konu[]" value="Diğer" id="konu3" v-model="formData.konular">
+                                    <input class="form-check-input" type="checkbox" name="konu[]" value="Diğer"
+                                        id="konu3" v-model="formData.konular">
                                     <label class="form-check-label" for="konu3">Diğer</label>
                                 </div>
                             </div>
@@ -120,7 +131,8 @@
                             <!-- Mesaj (Textarea) -->
                             <div class="mb-4">
                                 <label for="mesaj" class="form-label">Mesajınız</label>
-                                <textarea class="form-control" id="mesaj" name="mesaj" rows="4" v-model="formData.mesaj"></textarea>
+                                <textarea class="form-control" id="mesaj" name="mesaj" rows="4"
+                                    v-model="formData.mesaj"></textarea>
                             </div>
 
                             <!-- Submit Buttons -->
@@ -156,4 +168,5 @@
     <!-- Vue.js Logic -->
     <script src="js/vue-app.js"></script>
 </body>
+
 </html>
