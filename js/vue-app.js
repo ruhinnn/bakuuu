@@ -48,15 +48,41 @@ document.addEventListener("DOMContentLoaded", () => {
                         this.vueErrors.push('Lütfen cinsiyet seçiniz.');
                     }
 
+                    // Şehir kontrolü
+                    if (!this.formData.sehir) {
+                        this.vueErrors.push('Lütfen bir şehir seçiniz.');
+                    }
+
+                    // Konu kontrolü
+                    if (!this.formData.konular.length) {
+                        this.vueErrors.push('En az bir iletişim nedeni seçiniz.');
+                    }
+
                     // Mesaj Kontrolü
                     if (!this.formData.mesaj.trim()) {
                         this.vueErrors.push('Mesaj alanı boş bırakılamaz.');
                     }
 
+                    const nativeAlert = document.getElementById('errorAlert');
+                    if (nativeAlert) nativeAlert.style.display = 'none';
+
                     // Hata yoksa formu submit et
                     if (this.vueErrors.length === 0) {
                         this.$refs.formRef.submit();
+                    } else {
+                        this.$nextTick(() => {
+                            const el = document.querySelector('#vue-app .alert-warning');
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        });
                     }
+                }
+            },
+            mounted() {
+                const btnNative = document.getElementById('btnNative');
+                if (btnNative) {
+                    btnNative.addEventListener('click', () => {
+                        if (typeof validateNative === 'function') validateNative();
+                    });
                 }
             }
         }).mount('#vue-app');

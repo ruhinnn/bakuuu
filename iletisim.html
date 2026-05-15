@@ -46,18 +46,7 @@
                 <div class="custom-card card p-4 shadow-lg">
                     <h2 class="text-center text-primary mb-4">Bize Ulaşın</h2>
 
-                    <!-- Alert for JS validation errors -->
-                    <div id="errorAlert" class="alert alert-danger" style="display:none;"></div>
-
-                    <!-- Vue App Wrapper -->
                     <div id="vue-app">
-                        <!-- Alert for Vue validation errors -->
-                        <div v-if="vueErrors.length" class="alert alert-warning">
-                            <ul class="mb-0">
-                                <li v-for="err in vueErrors" :key="err">{{ err }}</li>
-                            </ul>
-                        </div>
-
                         <form id="contactForm" action="form-sonuc.php" method="POST" novalidate ref="formRef">
 
                             <!-- Ad Soyad (Text) -->
@@ -100,7 +89,7 @@
                             <div class="mb-3">
                                 <label for="sehir" class="form-label">Şehir</label>
                                 <select class="form-select" id="sehir" name="sehir" v-model="formData.sehir">
-                                    <option value="" disabled selected>Lütfen bir şehir seçin...</option>
+                                    <option value="" disabled>Lütfen bir şehir seçin...</option>
                                     <option value="Sakarya">Sakarya</option>
                                     <option value="İstanbul">İstanbul</option>
                                     <option value="Ankara">Ankara</option>
@@ -135,13 +124,20 @@
                                     v-model="formData.mesaj"></textarea>
                             </div>
 
+                            <!-- Hata mesajları (butonların hemen üstünde) -->
+                            <div id="errorAlert" class="alert alert-danger" style="display:none;" role="alert"></div>
+                            <div v-if="vueErrors.length" class="alert alert-warning" role="alert">
+                                <strong>Hata (Vue.js):</strong>
+                                <ul class="mb-0 mt-2">
+                                    <li v-for="err in vueErrors" :key="err">{{ err }}</li>
+                                </ul>
+                            </div>
+
                             <!-- Submit Buttons -->
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <!-- Native JS Button -->
-                                <button type="button" id="btnNative" class="btn btn-primary" onclick="validateNative()">
+                                <button type="button" id="btnNative" class="btn btn-primary">
                                     Gönder (Native JS Denetimi)
                                 </button>
-                                <!-- Vue JS Button -->
                                 <button type="button" id="btnVue" class="btn btn-success" @click="validateVue()">
                                     Gönder (Vue.js Denetimi)
                                 </button>
@@ -157,7 +153,7 @@
     <!-- Footer -->
     <footer class="footer text-center">
         <div class="container">
-            <p>&copy; 2024 Web Teknolojileri Projesi.</p>
+            <p>&copy; 2026 Web Teknolojileri Projesi.</p>
         </div>
     </footer>
 

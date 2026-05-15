@@ -1,6 +1,40 @@
+// ====== YOUTUBE GÖMME (file:// ve http için) ======
+function initYoutubeEmbeds() {
+    document.querySelectorAll(".youtube-embed[data-youtube-id]").forEach((container) => {
+        const id = container.dataset.youtubeId;
+        const title = container.dataset.youtubeTitle || "YouTube video";
+
+        if (location.protocol === "file:") {
+            container.classList.remove("ratio", "ratio-16x9", "ratio-21x9");
+            container.innerHTML = `
+                <div class="bg-dark text-white rounded text-center p-4 p-md-5">
+                    <i class="fab fa-youtube fa-3x text-danger mb-3"></i>
+                    <h5 class="mb-3">${title}</h5>
+                    <a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-danger btn-lg">
+                        <i class="fas fa-play me-2"></i>Videoyu YouTube'da Aç
+                    </a>
+                    <p class="text-white-50 small mt-3 mb-0">
+                        Sayfa içinde oynatmak için proje klasöründeki <strong>start.bat</strong> dosyasına çift tıklayın.
+                    </p>
+                </div>`;
+            return;
+        }
+
+        container.innerHTML = `
+            <iframe src="https://www.youtube-nocookie.com/embed/${id}?rel=0"
+                title="${title}"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                style="width:100%;height:100%;border:0;"></iframe>`;
+    });
+}
+
 // ====== API SAYFASI İŞLEMLERİ & GENEL KONTROLLER ======
 document.addEventListener("DOMContentLoaded", () => {
-    
+    initYoutubeEmbeds();
+
     // Login Sayfası URL Hata Yakalama
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('error') && document.getElementById('loginError')) {
@@ -89,19 +123,37 @@ function validateNative() {
     }
     if (!isCinsiyetSelected) errors.push('Lütfen cinsiyet seçiniz.');
 
+    // Şehir kontrolü
+    const sehir = document.getElementById('sehir').value;
+    if (!sehir) errors.push('Lütfen bir şehir seçiniz.');
+
+    // Konu (en az bir checkbox)
+    const konuChecked = document.querySelectorAll('input[name="konu[]"]:checked');
+    if (konuChecked.length === 0) errors.push('En az bir iletişim nedeni seçiniz.');
+
     // Mesaj kontrolü
     if (mesaj === '') errors.push('Mesaj alanı boş bırakılamaz.');
+
+    if (!errorAlert) return;
 
     // Hata gösterimi veya formu gönderme
     if (errors.length > 0) {
         errorAlert.style.display = 'block';
-        errorAlert.innerHTML = '<strong>Hata (Native JS):</strong><br>' + errors.join('<br>');
+        errorAlert.innerHTML = '<strong>Hata (Native JS):</strong><ul class="mb-0 mt-2"><li>' + errors.join('</li><li>') + '</li></ul>';
+        errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
         errorAlert.style.display = 'none';
-        // Form geçerli, gönder (Vue nesnesi de aynı formu kullanıyor ama biz manuel submitt edeceğiz)
         document.getElementById('contactForm').submit();
     }
 }
+
+// İletişim sayfası: Native JS butonu
+document.addEventListener('DOMContentLoaded', () => {
+    const btnNative = document.getElementById('btnNative');
+    if (btnNative) {
+        btnNative.addEventListener('click', validateNative);
+    }
+});
 
 // ====== NATIVE JS İLE LOGIN FORMU DENETİMİ ======
 function validateLogin(event) {
